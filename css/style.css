@@ -253,13 +253,76 @@ header .subtitle-containter {
   margin: 0 var(--mb-1-5);
 }
 
-.section-container .img {
+/* .section-container {
   max-width: 100%;
-}
+} */
 
-.img-container2 {
+.img-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  height: calc(100vh + 4em);
+}
+
+.img-container > img {
+  max-width: 100%;
+}
+.sat-graph,
+.assembled-fiber {
+  position: absolute;
+  z-index: -1;
+  /* max-width: 100%; */
+}
+
+.sat-assembled,
+.assembled-fiber-color {
+  z-index: -1;
+  position: relative;
+}
+
+/* Cards */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--mb-3);
+}
+.card {
+  /* flex: 4 1; */
+  background-color: #463eff;
+  border-radius: 0.3em;
+  width: calc(100% - var(--mb-0-5));
+  margin: var(--mb-0-5);
+  box-shadow: 0px 12px 12px 5px #1d1d1d54;
+}
+
+.card-info {
+  padding: 2em;
+  color: var(--header-color);
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.partners-item {
+  width: 200px;
+  margin: var(--mb-1-5) var(--mb-2-5);
+}
+
+.item-img {
+  display: block;
+  max-width: 100%;
 }
 
 /* buttons */
@@ -267,18 +330,41 @@ header .subtitle-containter {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: var(--mb-2-5);
+}
+
+.section-container.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .button-container a {
   border: 2px solid #5c5c5c;
   padding: 0.87em;
   font-weight: var(--medium);
-  transition: border 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   text-transform: uppercase;
 }
 
 .button-container .button:hover {
   border: 2px solid #000000;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #dbdbdb;
+  padding: 2em 4em;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--mb-2-5);
 }
 
 /* media screens */
@@ -329,6 +415,14 @@ header .subtitle-containter {
   .section-container {
     margin: 0 auto;
     padding: 2em 0 4em;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card:not(:last-child) {
+    margin-right: var(--mb-0-5);
   }
 }
 

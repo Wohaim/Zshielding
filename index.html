@@ -89,14 +89,13 @@
             </p>
         </div>
         <div class="section-container ">
-            <div class="img-container">
+            <div class="img-container sats-img">
                 <img src="image/57b27064b3dd9ec06aefdf48_cubesat-image06.jpg"
-                    alt="A photo showing the construction of Qube Sata " class="img" id="image">
+                    alt="A photo showing the construction of Qube Sata " class="sat-graph" id="image">
+                <img src="image/Ncube2.jpg" alt="A photo showing the assembled Qube Sata " class="sat-assembled"
+                    id="image2" style="opacity: 0;">
             </div>
-            <div class="img-container2">
-                <img src="image/Ncube2.jpg" alt="A photo showing the assembled Qube Sata " class="img" id="image2">
-            </div>
-            <div class="section-subtitle top">
+            <div class=" section-subtitle top">
                 <p class="subtitle">
                     Adding shielding to commercial CubeSats reduces risk for premature failures due to total ionizing
                     dose
@@ -116,28 +115,96 @@
             <p class="subtitle">
                 Keeping communications systems open in the event of radiation exposure.
 
+
             </p>
         </div>
-        <!-- <div class="section-container ">
-            <div class="img-container">
-                <img src="image/57b27064b3dd9ec06aefdf48_cubesat-image06.jpg"
-                    alt="A photo showing the construction of Qube Sata " class="img" id="image">
+        <div class="section-container fiber ">
+            <div class="img-container fiber-img">
+                <img src="image/Obraz4.png" alt="A picture showing the construction of optical fiber "
+                    class="assembled-fiber" id="image">
+                <img src="image/Obraz5.jpg.jpg" alt="A picture showing the construction of a color optical fiber "
+                    class="assembled-fiber-color" style="opacity: 0;" id="image">
             </div>
-            <div class="img-container2">
-                <img src="image/Ncube2.jpg" alt="A photo showing the assembled Qube Sata " class="img" id="image2">
+
+            <div class="button-container">
+                <a href="" class="button">Learn More</a>
             </div>
-            <div class="section-subtitle top">
-                <p class="subtitle">
-                    Adding shielding to commercial CubeSats reduces risk for premature failures due to total ionizing
-                    dose
-                </p>
-            </div> -->
-        <div class="button-container">
-            <a href="" class="button">Learn More</a>
-        </div>
         </div>
 
     </section>
+    <section class="section">
+        <h2 class="section-title">
+            Prolong Communication On Earth
+
+
+        </h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-info">Low internal charging effects</div>
+            </div>
+            <div class="card">
+                <div class="card-info">
+                    Extend CubeSat missions
+                    from 3months to years
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-info">Increase ROI
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-info">
+                    Reduction in total ionizing radiation on electronics
+
+                </div>
+            </div>
+        </div>
+        <div class="section-container buttons">
+            <div class="button-container">
+                <a href="" class="button">Learn More</a>
+            </div>
+            <div class="button-container">
+                <a href="" class="button">Qucik Contact</a>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section-title">
+            The Partners
+
+
+        </h2>
+        <div class="partners-container">
+            <div class="partners-item">
+                <img src="image/baYs9AuHxx9QXeYBiMvSLU.png" alt="NASA logo" class="item-img">
+            </div>
+            <div class="partners-item">
+                <img src="image/902641.jpg" alt="Florida Atlantic University logo" class="item-img">
+            </div>
+            <div class="partners-item">
+                <img src="image/tech.webp" alt="Tech center logo " class="item-img">
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <p class="footer-addres">
+            Coconut Creek, Florida,
+            33063
+
+        </p>
+        <div class="footer-content">
+            <p class="footer-copy">&#169; All rights reserved ELEO Inc. 2023
+
+            </p>
+            <p class="footer-name">
+                www.eleo.space
+            </p>
+        </div>
+    </footer>
+    <!-- </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 
@@ -146,38 +213,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 
     <script>
+
+        document.addEventListener(onload, footerYear())
+
+
+
         gsap.registerPlugin(ScrollTrigger)
-        gsap.to(".img-container", {
-            opacity: 0,
-            duration: 4,
+
+        let sat = gsap.timeline({
             scrollTrigger: {
-                trigger: '.img-container',
-                start: 'center center',
-                end: 'bottom +=500',
-                scrub: 3,
-            }
-
-
-        });
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.img-container2',
-                start: '+=-100% center',
+                trigger: '.section-container',
+                start: 'top +=10%',
                 end: 'top top',
-                scrub: 0,
+                toggleActions: 'play none reverse reverse',
             }
 
         });
 
-        tl.to(".img-container2", {
-            y: '+= -500',
-            opacity: 1,
-            duration: 2,
+        sat.to(".sat-graph", {
+            opacity: 0,
+            duration: 1,
+
+
         })
-            .to('.img-container2', {
-                y: 0,
-                duration: 2,
+            .to('.sats-img', {
+                height: "70vh",
+            })
+            .to(".sat-assembled", {
+                opacity: 1,
+                duration: 1,
+            })
+
+
+        let fib = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.fiber',
+                start: 'top center',
+                end: 'top top',
+                toggleActions: 'play none reverse reverse',
+
+            }
+        });
+
+        fib.to(".assembled-fiber", {
+            opacity: 0,
+            duration: 1,
+        })
+            .to(".fiber-img", {
+                height: "50vh",
+            })
+            .to(".assembled-fiber-color", {
+                opacity: 1,
+                duration: 1,
             })
 
 
