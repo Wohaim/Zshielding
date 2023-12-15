@@ -86,7 +86,7 @@ header .subtitle-containter {
   position: fixed;
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 100vw;
   align-items: center;
   height: 8vh;
   -webkit-transition: height 0.4s ease;
@@ -237,7 +237,7 @@ header .subtitle-containter {
 }
 
 .section-title {
-  font-size: var(--h1-font-size-sc);
+  font-size: 2rem;
   margin: var(--mb-1-5) 0 var(--mb-0-75) 0;
   display: block;
   text-align: center;
@@ -251,6 +251,82 @@ header .subtitle-containter {
 .section-container {
   max-width: 768px;
   margin: 0 var(--mb-1-5);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 2em;
+}
+
+.container > h2 {
+  font-size: var(--h1-font-size-sc);
+}
+
+.container > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: var(--mb-2-5);
+}
+
+.section-content {
+  margin-bottom: var(--mb-1-5);
+}
+
+.container .section-title {
+  text-align: left;
+  width: 100%;
+  font-size: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.section-subtitle {
+  line-height: 1.7;
+  margin: var(--mb-1-5) 0;
+}
+
+.section-subtitle > img {
+  max-width: 100%;
+}
+
+.section-content p {
+  font-weight: var(--bold);
+}
+
+.section-content .description {
+  font-weight: var(--regular);
+}
+
+.section-item > svg {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.section-item > img {
+  max-width: 100%;
+}
+
+.section .section-card-img {
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: var(--mb-3);
+}
+
+.section .section-card-img > img {
+  max-width: 100%;
+}
+
+.description {
+  margin-top: var(--mb-1);
+  font-weight: var(--bold);
+}
+
+.container > img {
+  max-width: 100%;
 }
 
 /* .section-container {
@@ -298,6 +374,9 @@ header .subtitle-containter {
   width: calc(100% - var(--mb-0-5));
   margin: var(--mb-0-5);
   box-shadow: 0px 12px 12px 5px #1d1d1d54;
+  padding: 2em;
+  display: grid;
+  place-content: center;
 }
 
 .card-info {
@@ -306,6 +385,35 @@ header .subtitle-containter {
   word-wrap: break-word;
   text-align: center;
 }
+
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  padding: 2em;
+}
+
+.team-photo {
+  padding: 0 4em;
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+}
+
+.team-photo > img {
+  max-width: 100%;
+}
+
+.team-description p {
+  font-size: 1.2rem;
+  padding: 0 4em;
+}
+
+/* other */
 
 .partners-container {
   display: flex;
@@ -323,6 +431,21 @@ header .subtitle-containter {
 .item-img {
   display: block;
   max-width: 100%;
+}
+
+.benefits {
+  list-style-image: url('/image/chekbox16.png');
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.benefits li {
+  /* padding: 2em; */
+  margin-bottom: var(--mb-0-5);
+}
+
+.features li {
+  margin-top: var(--mb-1-5);
 }
 
 /* buttons */
@@ -365,9 +488,38 @@ header .subtitle-containter {
   justify-content: space-between;
   align-items: center;
   margin-top: var(--mb-2-5);
+  flex-wrap: wrap;
+}
+
+/* Technology */
+
+.hero {
+  height: calc(30vh + 15vh);
+  background: url('/image/pexels-francesco-ungaro-998641.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.upper-footer {
+  height: 15vh;
+  background: url('/image/pexels-francesco-ungaro-998641.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+/* red */
+
+.red {
+  color: #ff0000ee;
 }
 
 /* media screens */
+
+@media only screen and (max-width: 280px) {
+  .section-container.buttons {
+    flex-direction: column;
+  }
+}
 
 @media only screen and (min-width: 961px) {
   header .title {
@@ -407,6 +559,12 @@ header .subtitle-containter {
   .header .subtitle-containter .subtitle {
     font-size: 1.3rem;
   }
+  .section {
+    padding: 90px 0;
+  }
+  .section-title {
+    font-size: var(--h1-font-size-sc);
+  }
 
   .section-subtitle p {
     font-size: 1.25rem;
@@ -418,14 +576,73 @@ header .subtitle-containter {
   }
 
   .card {
-    width: auto;
+    max-width: 300px;
+    height: 150px;
   }
 
   .card:not(:last-child) {
     margin-right: var(--mb-0-5);
   }
+  .container.flex {
+    display: flex;
+    align-items: center;
+  }
+  .section-content {
+    padding-left: 0 !important;
+
+    flex: 0 0 50%;
+    align-items: center;
+  }
+  .section-item {
+    padding: 2em;
+  }
+  .container .section-title {
+    font-size: var(--h1-font-size-sc);
+  }
+
+  .container > h2 {
+    font-size: 3rem;
+  }
+
+  .section:nth-child(odd) .container.flex {
+    flex-direction: row-reverse;
+  }
+  /* .section:nth-last-child(-n + 5) .container {
+    display: block;
+  } */
+  .benefits {
+    list-style-image: none;
+    list-style-type: none;
+    padding: 2em 11em;
+    align-content: center;
+  }
+  .benefits li::before {
+    content: url('/image/chekbox64.png');
+    position: relative;
+    display: block;
+    top: 50px;
+    left: -75px;
+  }
 }
 
+@media only screen and (min-width: 1799px) {
+  .container {
+    max-width: 1530px;
+  }
+  .section:nth-child(even) .section-content {
+    padding: 0 14%;
+    align-self: center;
+  }
+  .section:nth-child(odd) .section-item {
+    padding: 0 14%;
+  }
+}
+
+@media only screen and (min-width: 1439px) {
+  .container {
+    max-width: 1410px;
+  }
+}
 /* keyframes */
 /* 
 @keyframes links-underline {
