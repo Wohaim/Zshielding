@@ -59,7 +59,7 @@ header {
 }
 
 header .title {
-  font: var(--h1-font-size-sc) / 40px 'Poppins', Arial, Verdana, sans-serif;
+  font: 2rem / 40px 'Poppins', Arial, Verdana, sans-serif;
   text-align: center;
   font-weight: var(--bold);
   color: var(--header-color);
@@ -233,7 +233,7 @@ header .subtitle-containter {
 /* secitons */
 
 .section {
-  padding: 2em 0 4em;
+  padding: 2em 2em;
 }
 
 .section-title {
@@ -518,6 +518,9 @@ header .subtitle-containter {
 @media only screen and (max-width: 280px) {
   .section-container.buttons {
     flex-direction: column;
+  }
+  .section {
+    padding: 2em 0em;
   }
 }
 
